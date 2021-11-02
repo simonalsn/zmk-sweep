@@ -36,7 +36,7 @@
 		&kp Q          &kp W       &kp E            &kp R             &kp T         &kp Y      &kp U      &kp I       &kp O        &kp P
 		&hm LGUI A     &hm LALT S  &hm LSHFT D      &hm LCTL F        &kp G         &kp H      &hm RCTL J &hm RSHFT K  &hm RALT L   &hm RGUI BSPC
 		&mt LSFT Z     &kp X       &kp C            &kp V             &kp B         &kp N      &kp M      &kp CMMA    &kp DOT      &kp MINUS
-          				                              &mo 1             &trans	      &trans     &mo 2
+          				                              &mo 1             &kp SPACE     &kp ENTER  &mo 2
 		>;
 		};
 
