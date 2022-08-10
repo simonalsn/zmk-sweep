@@ -25,6 +25,26 @@
       flavor = "tap-preferred";
       bindings = <&kp>, <&kp>;
     };
+    lh: left_hand_positional_hold_tap {
+      compatible = "zmk,behavior-hold-tap";
+      label = "LEFT_POSITIONAL_HOLD_TAP";
+      #binding-cells = <2>;
+      flavor = "tap-unless-interrupted";
+      tapping-term-ms = <175>;
+      quick-tap-ms = <150>;
+      bindings = <&kp>, <&kp>;
+      hold-trigger-key-positions = <5 6 7 8 9>;
+    };
+    rh: right_hand_positional_hold_tap {
+      compatible = "zmk,behavior-hold-tap";
+      label = "RIGHT_POSITIONAL_HOLD_TAP";
+      #binding-cells = <2>;
+      flavor = "tap-unless-interrupted";
+      tapping-term-ms = <175>;
+      quick-tap-ms = <150>;
+      bindings = <&kp>, <&kp>;
+      hold-trigger-key-positions = <0 1 2 3 4>;
+    };
   };
 
   keymap {
@@ -33,7 +53,7 @@
     default_layer {
       bindings = <
         &kp Q       &kp W       &kp E       &kp R       &kp T         &kp P         &kp Y         &kp U       &kp I       &kp O
-        &hm LCTRL A &hm LSHFT S &hm LMETA D &hm LALT F  &hm RALT G    &hm RALT SEMI &hm LALT H    &hm RMETA J &hm RSHFT K &hm RCTRL L
+        &lh LCTRL A &lh LSHFT S &lh LMETA D &lh LALT F  &lh RALT G    &rh RALT SEMI &rh LALT H    &rh RMETA J &rh RSHFT K &rh RCTRL L
         &kp Z       &kp X       &kp C       &kp V       &kp B         &kp SLASH     &kp N         &kp M       &kp CMMA    &kp DOT
                                             &kp ESC     &lt 2 SPACE   &lt 1 BSPC    &kp ENTER
       >;
@@ -42,7 +62,7 @@
     nav_layer {
       bindings = <
         &none     &none          &none           &none     &none              &kp PSCRN     &none         &kp PG_UP      &kp INS      &none
-        &kp LCTRL &hm LSHFT SLCK &hm LMETA PG_DN &kp LALT  &hm RALT END       &hm RALT HOME &hm LALT LEFT &hm RMETA DOWN &hm RSHFT UP &hm RCTRL RIGHT
+        &kp LCTRL &lh LSHFT SLCK &lh LMETA PG_DN &kp LALT  &lh RALT END       &lh RALT HOME &lh LALT LEFT &lh RMETA DOWN &lh RSHFT UP &lh RCTRL RIGHT
         &none     &kp DEL        &kp CLCK        &none     &kp PAUSE_BREAK    &none         &kp LNLCK     &kp K_CMENU    &none        &none
                                                  &none     &kp TAB            &none         &mo 3
       >;
@@ -50,17 +70,17 @@
 
     sym_layer {
       bindings = <
-        &kp LBRC        &kp RBRC        &kp LPAR        &kp RPAR      &none            &none  &kp N7      &kp N8       &kp N9       &kp RA(W)
-        &hm LCTRL GRAVE &hm LSHFT MINUS &hm LMETA EQUAL &hm LALT APOS &hm RALT BSLH    &none  &hm LALT N4 &hm RMETA N5 &hm RSHFT N6 &kp RA(L)
-        &kp LT          &kp GT          &kp LBKT        &kp RBKT      &none            &none  &kp N1      &kp N2       &kp N3       &kp RA(Z)
                                                         &mo 3         &none            &kp N0 &none
+        &kp LBRC        &kp RBRC        &kp LPAR        &kp RPAR      &none            &none    &kp N7      &kp N8       &kp N9       &kp RA(W)
+        &lh LCTRL GRAVE &lh LSHFT MINUS &lh LMETA EQUAL &lh LALT APOS &lh RALT BSLH    &none    &rh LALT N4 &rh RMETA N5 &rh RSHFT N6 &kp RA(L)
+        &kp LT          &kp GT          &kp LBKT        &kp RBKT      &none            &none    &kp N1      &kp N2       &kp N3       &kp RA(Z)
       >;
     };
 
     fun_layer {
       bindings = <
         &kp K_PLAY_PAUSE &kp K_MUTE         &none              &reset           &kp C_BRI_UP    &bt BT_SEL 2    &kp F7 &kp F8 &kp F9 &kp F12
-        &hm LCTRL K_PREV &hm LSHFT K_VOL_DN &hm LMETA K_VOL_UP &hm LALT K_NEXT  &kp C_BRI_DN    &bt BT_SEL 1    &kp F4 &kp F5 &kp F6 &kp F11
+        &lh LCTRL K_PREV &lh LSHFT K_VOL_DN &lh LMETA K_VOL_UP &lh LALT K_NEXT  &kp C_BRI_DN    &bt BT_SEL 1    &kp F4 &kp F5 &kp F6 &kp F11
         &bt BT_PRV       &bt BT_CLR         &out OUT_TOG       &bt BT_NXT       &bootloader     &bt BT_SEL 0    &kp F1 &kp F2 &kp F3 &kp F10
                                                                &none            &none           &none           &none
       >;
