@@ -34,8 +34,8 @@
        		default_layer {
 		bindings = <
 		&kp Q          &kp W       &kp E            &kp R             &kp T         &kp Y      &kp U      &kp I        &kp O        &kp P
-		&hm LGUI A     &hm LALT S  &hm LSHFT D      &hm LCTL F        &kp G         &kp H      &hm RCTL J &hm RSHFT K  &hm RALT L   &hm RGUI BSPC
-		&kp Z          &kp X       &kp C            &kp V             &kp B         &kp N      &kp M      &kp CMMA     &kp DOT      &kp SLASH
+		&hm LGUI A     &hm LALT S  &hm LSHFT D      &hm LCTRL F       &kp G         &kp H      &hm RCTRL J &hm RSHFT K  &hm RALT L   &hm RGUI BSPC
+		&kp Z          &kp X       &kp C            &kp V             &kp B         &kp N      &kp M      &kp COMMA     &kp DOT      &kp SLASH
           				                            &mo 3             &kp SPACE     &kp ENTER  &mo 4
 		>;
 		};
@@ -43,8 +43,8 @@
 		      colemak {
 		bindings = <
 		&kp Q         &kp W        &kp F            &kp P            &kp G  	    &kp J       &kp L         &kp U       &kp Y       &kp BSPC
-		&hm LGUI A    &hm LALT R   &hm LSHFT S      &hm LCTL T       &kp D          &kp H       &hm RCTL N    &hm RSHFT E &hm RALT I  &hm RGUI O
-		&kp Z         &kp X        &kp C            &kp V            &kp B          &kp K       &kp M         &kp CMMA    &kp DOT     &kp SLASH
+		&hm LGUI A    &hm LALT R   &hm LSHFT S      &hm LCTRL T      &kp D          &kp H       &hm RCTRL N    &hm RSHFT E &hm RALT I  &hm RGUI O
+		&kp Z         &kp X        &kp C            &kp V            &kp B          &kp K       &kp M         &kp COMMA    &kp DOT     &kp SLASH
 		                                            &trans           &trans  		&trans      &trans
 		>;
 		};
@@ -53,7 +53,7 @@
 		bindings = <
     	&kp TAB        &kp Q       &kp W            &kp E           &kp R       	&kp Y		&kp U      &kp I        &kp O        &kp P
 		&kp LSHFT      &kp A       &kp S            &kp D           &kp F       	&kp H		&kp J      &kp K        &kp L        &kp BSPC
-		&kp LCTL       &kp Z       &kp X            &kp C           &kp V       	&kp N		&kp M      &kp CMMA     &kp DOT      &kp SLASH
+		&kp LCTRL       &kp Z       &kp X            &kp C          &kp V       	&kp N		&kp M      &kp COMMA     &kp DOT     &kp SLASH
 		                                            &trans			&trans			&trans		&trans
 		>;
 		};
@@ -61,8 +61,8 @@
        		left_layer {
 		bindings = <
 		&kp N1        &kp N2       &kp N3           &kp N4			&kp N5  	    &kp N6      &kp N7        &kp N8     &kp N9      &kp N0
-		&kp LGUI      &kp LALT     &hm LSHFT UNDER  &kp LCTL        &kp ESC  	 	&none       &kp RCTL      &kp RSHFT  &kp RALT    &kp RGUI
-		&none         &kp DEL      &kp TAB          &kp GRAVE       &kp K_APP      	&kp HOME    &kp END       &none      &none       &none
+		&kp LGUI      &kp LALT     &hm LSHFT UNDER  &kp LCTRL       &kp ESC  	 	&none       &kp RCTRL     &kp RSHFT  &kp RALT    &kp RGUI
+		&kp KC_NUBS   &kp DEL      &kp TAB          &kp GRAVE       &kp K_APP      	&kp HOME    &kp END       &none      &none       &kp ACUTE_ACCENT
 					                                      &trans    &trans  		&trans      &mo 5
 		>;
 		};
@@ -70,8 +70,8 @@
 		      right_layer {
 		bindings = <
 		&kp F1        &kp F2        &kp F3          &kp F4           &kp F5     		&kp F6      &kp F7        &kp F8     &kp F9     &kp F10
-		&kp LGUI      &kp LALT      &kp LSHFT       &kp LCTL         &kp BSLH    		&kp BSLH    &kp LEFT      &kp DOWN   &kp UP     &kp RIGHT
-    	&kp F11       &kp F12       &none           &none            &none      		&none       &kp SEMI      &kp SQT    &kp LBKT   &none
+		&kp LGUI      &kp LALT      &kp LSHFT       &kp LCTRL        &kp BSLH    		&kp BSLH    &kp LEFT      &kp DOWN   &kp UP     &kp RIGHT
+    	&kp F11       &kp F12       &none           &none            &none      		&none       &kp SEMI      &kp SQT    &kp LBKT   &kp BACKSLASH
 				                                    &mo 5            &trans  			&trans      &trans
 		>;
 		};
