@@ -62,7 +62,7 @@
 		bindings = <
 		&kp N1        &kp N2       &kp N3           &kp N4			&kp N5  	    &kp N6      &kp N7        &kp N8     &kp N9      &kp N0
 		&kp LGUI      &kp LALT     &hm LSHFT UNDER  &kp LCTRL       &kp ESC  	 	&none       &kp RCTRL     &kp RSHFT  &kp RALT    &kp RGUI
-		&kp KC_NUBS   &kp DEL      &kp TAB          &kp GRAVE       &kp K_APP      	&kp HOME    &kp END       &none      &none       &kp ACUTE_ACCENT
+		&kp KC_NUBS   &kp DEL      &kp TAB          &kp GRAVE       &kp K_APP      	&kp HOME    &kp END       &none      &none       &none
 					                                      &trans    &trans  		&trans      &mo 5
 		>;
 		};
