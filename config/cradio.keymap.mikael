@@ -1,0 +1,70 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
+
+&mt {
+    tapping-term-ms = <175>;
+};
+
+/ {
+  behaviors {
+    hm: homerow_mods {
+      compatible = "zmk,behavior-hold-tap";
+      label = "HOMEROW_MODS";
+      #binding-cells = <2>;
+      tapping-term-ms = <175>;
+      quick_tap_ms = <150>;
+      flavor = "tap-preferred";
+      bindings = <&kp>, <&kp>;
+    };
+  };
+
+  keymap {
+    compatible = "zmk,keymap";
+    
+    default_layer {
+      bindings = <
+        &kp Q       &kp W       &kp E       &kp R      &kp T         &kp P         &kp Y         &kp U       &kp I       &kp O
+        &hm LCTRL A &hm LSHFT S &hm LMETA D &hm LALT F &hm RALT G    &hm RALT SEMI &hm LALT H    &hm RMETA J &hm RSHFT K &hm RCTRL L
+        &kp Z       &kp X       &kp C       &kp V      &kp B         &kp SLASH     &kp N         &kp M       &kp CMMA    &kp DOT
+                                &kp TAB     &lt 2 SPACE                            &lt 1 BSPC    &kp ENTER
+      >;
+    };
+
+    nav_layer {
+      bindings = <
+        &kp ESC   &none          &none           &none    &none              &kp PSCRN     &none         &kp PG_UP      &kp INS      &none
+        &kp LCTRL &hm LSHFT SLCK &hm LMETA PG_DN &kp LALT &hm RALT END       &hm RALT HOME &hm LALT LEFT &hm RMETA DOWN &hm RSHFT UP &hm RCTRL RIGHT
+        &none     &kp DEL        &kp CLCK        &none    &kp PAUSE_BREAK    &none         &kp LNLCK     &kp K_CMENU    &none        &none
+                                 &none           &mo 3                                     &trans        &none 
+      >;
+    };
+    
+    sym_layer {
+      bindings = <
+        &kp LBRC        &kp RBRC        &kp LPAR        &kp RPAR      &none            &none  &kp N7      &kp N8       &kp N9       &kp RA(W)
+        &hm LCTRL GRAVE &hm LSHFT MINUS &hm LMETA EQUAL &hm LALT APOS &hm RALT BSLH    &none  &hm LALT N4 &hm RMETA N5 &hm RSHFT N6 &kp RA(L)
+        &kp LT          &kp GT          &kp LBKT        &kp RBKT      &none            &kp N0 &kp N1      &kp N2       &kp N3       &kp RA(Z)
+                                        &none           &trans                                &mo 3       &none 
+      >;
+    };    
+    
+    fun_layer {
+      bindings = <
+        &kp K_PLAY_PAUSE &kp K_MUTE         &out OUT_TOG       &reset           &kp C_BRI_UP    &kp F12  &kp F7 &kp F8 &kp F9 &none
+        &hm LCTRL K_PREV &hm LSHFT K_VOL_DN &hm LMETA K_VOL_UP &hm LALT K_NEXT  &kp C_BRI_DN    &kp F11  &kp F4 &kp F5 &kp F6 &none
+        &bt BT_SEL 0     &bt BT_SEL 1       &bt BT_SEL 2       &bt BT_CLR       &bootloader     &kp F10  &kp F1 &kp F2 &kp F3 &none
+                                            &none              &none                                     &none  &none 
+      >;
+    };
+
+  };
+
+};
